@@ -2,7 +2,9 @@
 
 // Create a n*n grid
 function createGrid(e) {
+    // If default, make it 16*16
     let n = 16
+    // If createGrid is called because of a change event on the range input, make it as selected by user
     if (e) {
         n = e.target.value
     }
@@ -23,6 +25,7 @@ function createGrid(e) {
         grid.appendChild(row);    
     }
 }
+// Create default grid
 createGrid();
 
 // Select the range input and listen for changes on it
