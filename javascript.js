@@ -44,8 +44,18 @@ document.body.onmouseup = () => (mouseDown = false);
 function paintCell(e) {
     if (e.type == "mouseover" && !mouseDown) return
     console.log(e);
+    // Paint in black
     e.target.style.backgroundColor = "black";
 }
 
 // TODO: Add functionality to clear button
+function clearGrid(e) {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "white";
+    });
+}
+
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", clearGrid);
 // TODO: Add rainbow color option
