@@ -23,6 +23,7 @@ function createGrid(e) {
         for (let j = 0; j < n; j++) {
             const cell = document.createElement("div")
             cell.classList.add("cell", "cell-border")
+            cell.style.backgroundColor = "white";
             cell.addEventListener("mouseover", paintCell);
             cell.addEventListener("mousedown", paintCell);
             row.appendChild(cell);
@@ -54,9 +55,10 @@ document.body.onmouseup = () => (mouseDown = false);
 
 function paintCell(e) {
     if (e.type == "mouseover" && !mouseDown) return
-    console.log(e);
     // Paint in black
-    e.target.style.backgroundColor = "black";
+    if (e.target.style.backgroundColor === "white") {
+        e.target.style.backgroundColor = "black";
+    }
 }
 
 // Add functionality to clear button
