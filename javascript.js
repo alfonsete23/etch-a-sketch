@@ -8,6 +8,9 @@ function createGrid(e) {
     if (e) {
         n = e.target.value
     }
+    // Change the value of n*n rendered under the input
+    const p = document.querySelector("#p");
+    p.textContent = `${n}x${n}`
     // Select the grid
     const grid = document.querySelector("#grid")
     // Remove the previous grid

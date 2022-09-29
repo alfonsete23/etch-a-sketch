@@ -29,3 +29,16 @@ body {
 .cell-border {
     border: 1px solid black;
 }
+
+.options {
+    width: 480px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  
+}
+
+.range-btn p {
+    margin: 0;
+}
