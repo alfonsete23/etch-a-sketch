@@ -19,7 +19,9 @@ function createGrid(e) {
         // Inside each row, add n cells
         for (let j = 0; j < n; j++) {
             const cell = document.createElement("div")
-            cell.classList.add("cell")
+            cell.classList.add("cell", "cell-border")
+            cell.addEventListener("mouseover", paintCell);
+            cell.addEventListener("mousedown", paintCell);
             row.appendChild(cell);
         }
         grid.appendChild(row);    
@@ -32,4 +34,18 @@ createGrid();
 const range = document.querySelector("#range")
 range.addEventListener("change", createGrid)
 
+// TODO: Toggle grid lines
+// TODO: Paint cell when click on it
+// Paint the cell in black
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
+function paintCell(e) {
+    if (e.type == "mouseover" && !mouseDown) return
+    console.log(e);
+    e.target.style.backgroundColor = "black";
+}
+
+// TODO: Add functionality to clear button
+// TODO: Add rainbow color option

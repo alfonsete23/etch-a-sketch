@@ -24,6 +24,8 @@ body {
 
 .cell {
     height: 100%;
-    background-color: red;
-    border: solid 1px black;
+}
+
+.cell-border {
+    border: 1px solid black;
 }
