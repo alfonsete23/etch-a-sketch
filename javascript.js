@@ -34,9 +34,17 @@ createGrid();
 const range = document.querySelector("#range")
 range.addEventListener("change", createGrid)
 
-// TODO: Toggle grid lines
-// TODO: Paint cell when click on it
-// Paint the cell in black
+// Toggle grid lines
+const toggle = document.querySelector("#toggle-grid");
+toggle.addEventListener("click", toggleGrid)
+
+function toggleGrid() {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
+        cell.classList.toggle("cell-border");
+    })
+}
+// Paint cell when click on it
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -48,8 +56,8 @@ function paintCell(e) {
     e.target.style.backgroundColor = "black";
 }
 
-// TODO: Add functionality to clear button
-function clearGrid(e) {
+// Add functionality to clear button
+function clearGrid() {
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
         cell.style.backgroundColor = "white";
